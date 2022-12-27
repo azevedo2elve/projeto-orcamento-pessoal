@@ -24,6 +24,14 @@
 
   <script src="app.js"></script>
 
+  <style>
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -61,33 +69,9 @@
     </div>
 
     <div class="row mb-2">
-      <div class="col-md-2">
-        <select class="form-control" id="ano">
-          <option value="">Ano</option>
-          <option value="2022">2022</option>
-        </select>
-      </div>
 
-      <div class="col-md-2">
-        <select class="form-control" id="mes">
-          <option value="">Mês</option>
-          <option value="1">Janeiro</option>
-          <option value="2">Fevereiro</option>
-          <option value="3">Março</option>
-          <option value="4">Abril</option>
-          <option value="5">Maio</option>
-          <option value="6">Junho</option>
-          <option value="7">Julho</option>
-          <option value="8">Agosto</option>
-          <option value="9">Setembro</option>
-          <option value="10">Outubro</option>
-          <option value="11">Novembro</option>
-          <option value="12">Dezembro</option>
-        </select>
-      </div>
-
-      <div class="col-md-2">
-        <input type="text" class="form-control" placeholder="Dia" id="dia" />
+      <div class="col-md-6">
+        <input type="date" class="form-control" id="new_data">
       </div>
 
       <div class="col-md-6">
@@ -108,17 +92,17 @@
       </div>
 
       <div class="col-md-2">
-        <input type="text" class="form-control" placeholder="Valor" id="valor" />
+        <input type="number" class="form-control" placeholder="Valor" id="valor"/>
       </div>
 
       <div class="col-md-2 d-flex justify-content-end">
-        <button type="button" class="btn btn-primary" onclick="cadastrarDespesas()">
+        <button type="button" class="btn btn-primary pr-4 pl-4" onclick="cadastrarDespesas()">
           <i class="fas fa-plus"></i>
         </button>
       </div>
     </div>
   </div>
-  
+
   <!-- Modal -->
   <div class="modal fade" id="modalRegistraDespesa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">

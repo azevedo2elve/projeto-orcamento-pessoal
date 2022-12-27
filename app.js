@@ -14,6 +14,7 @@ class Despesa {
                 return false
             }
         }
+        if (this.dia)
         return true
     }
 }
@@ -92,17 +93,22 @@ let bd = new Bd()
 
 
 function cadastrarDespesas() {
-    let ano = document.getElementById('ano')
-    let mes = document.getElementById('mes')
-    let dia = document.getElementById('dia')
     let tipo = document.getElementById('tipo')
     let descricao = document.getElementById('descricao')
     let valor = document.getElementById('valor')
 
+    let data = document.getElementById('new_data').value
+    console.log(data);
+    let ano = data.substring(0, 4)
+    let mes = data.substring(5, 7)
+    let dia = data.substring(8)
+    
+    console.log(`Ano: ${ano}- Mês ${mes} - Dia ${dia}`);
+
     let despesa = new Despesa(
-        ano.value,
-        mes.value,
-        dia.value,
+        ano,
+        mes,
+        dia,
         tipo.value,
         descricao.value,
         valor.value
@@ -118,9 +124,9 @@ function cadastrarDespesas() {
 
         $('#modalRegistraDespesa').modal('show')
 
-        ano.value = ''
-        mes.value = ''
-        dia.value = ''
+        ano = ''
+        mes = ''
+        dia = ''
         tipo.value = ''
         descricao.value = ''
         valor.value = ''
